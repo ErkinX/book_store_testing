@@ -84,9 +84,9 @@ html.click()
 time.sleep(3)
 products_count = driver.find_elements_by_class_name("product")
 if len(products_count) == 3:
-  print("Отображается 3 товара")
+  print("РћС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ 3 С‚РѕРІР°СЂР°")
 else:
-  print("Ошибка. Количество товаров: " + str(len(products_count)))
+  print("РћС€РёР±РєР°. РљРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ: " + str(len(products_count)))
 
 
 
@@ -235,22 +235,22 @@ cart_contents = driver.find_element_by_css_selector(".cartcontents")
 assert "1 Item" in cart_contents.text
 time.sleep(3)
 amount = driver.find_element_by_css_selector("#wpmenucartli .amount")
-assert "?180.00" in amount.text
+assert "в‚№180.00" in amount.text
 time.sleep(3)
 view_basket = driver.find_element_by_link_text("View Basket")
 view_basket.click()
 time.sleep(3)
 subtotal = driver.find_element_by_css_selector(".cart-subtotal")
-if  str("?181.00"):
-    print("В Subtotal ОТОБРАЗИЛАСЬ стоимость")
+if  str("в‚№181.00"):
+    print("Р’ Subtotal РћРўРћР‘Р РђР—РР›РђРЎР¬ СЃС‚РѕРёРјРѕСЃС‚СЊ")
 else:
-    print("В Subtotal НЕ ОТОБРАЗИЛАСЬ стоимость")
+    print("Р’ Subtotal РќР• РћРўРћР‘Р РђР—РР›РђРЎР¬ СЃС‚РѕРёРјРѕСЃС‚СЊ")
 time.sleep(3)
 total = driver.find_element_by_css_selector(".order-total")
 if str("?184.60"):
-    print("В Total ОТОБРАЗИЛАСЬ стоимость")
+    print("Р’ Total РћРўРћР‘Р РђР—РР›РђРЎР¬ СЃС‚РѕРёРјРѕСЃС‚СЊ")
 else:
-    print("В Total НЕ ОТОБРАЗИЛАСЬ стоимость")
+    print("Р’ Total РќР• РћРўРћР‘Р РђР—РР›РђРЎР¬ СЃС‚РѕРёРјРѕСЃС‚СЊ")
 
 
 
