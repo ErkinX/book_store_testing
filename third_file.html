@@ -1,0 +1,401 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+my_account = driver.find_element_by_css_selector("#menu-item-50 a")
+my_account.click()
+time.sleep(3)
+username = driver.find_element_by_css_selector("#username")
+username.send_keys("ax.erkin@gmail.com")
+time.sleep(3)
+password = driver.find_element_by_css_selector("#password")
+password.send_keys("garikratatuy")
+time.sleep(3)
+login_button = driver.find_element_by_css_selector(".u-column1 .woocommerce-Button")
+login_button.click()
+time.sleep(3)
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+form = driver.find_element_by_css_selector(".products li:nth-child(3) a:nth-child(1)")
+form.click()
+time.sleep(3)
+product_title = driver.find_element_by_css_selector(".product_title").text
+assert "HTML5 Forms" in product_title
+
+
+
+
+
+
+
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+my_account = driver.find_element_by_css_selector("#menu-item-50 a")
+my_account.click()
+time.sleep(3)
+username = driver.find_element_by_css_selector("#username")
+username.send_keys("ax.erkin@gmail.com")
+time.sleep(3)
+password = driver.find_element_by_css_selector("#password")
+password.send_keys("garikratatuy")
+time.sleep(3)
+login_button = driver.find_element_by_css_selector(".u-column1 .woocommerce-Button")
+login_button.click()
+time.sleep(3)
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+form = driver.find_element_by_css_selector(".products li:nth-child(3) a:nth-child(1)")
+form.click()
+time.sleep(3)
+html = driver.find_element_by_link_text("HTML")
+html.click()
+time.sleep(3)
+products_count = driver.find_elements_by_class_name("product")
+if len(products_count) == 3:
+  print("Îòîáðàæàåòñÿ 3 òîâàðà")
+else:
+  print("Îøèáêà. Êîëè÷åñòâî òîâàðîâ: " + str(len(products_count)))
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.select import Select
+
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+my_account = driver.find_element_by_css_selector("#menu-item-50 a")
+my_account.click()
+time.sleep(3)
+username = driver.find_element_by_css_selector("#username")
+username.send_keys("ax.erkin@gmail.com")
+time.sleep(3)
+password = driver.find_element_by_css_selector("#password")
+password.send_keys("garikratatuy")
+time.sleep(3)
+login_button = driver.find_element_by_css_selector(".u-column1 .woocommerce-Button")
+login_button.click()
+time.sleep(3)
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+order_by = driver.find_element_by_class_name("orderby")
+select = Select(order_by)
+selected_option = select.first_selected_option.get_attribute("value")
+assert "menu_order" in selected_option
+select.select_by_value("price-desc")
+time.sleep(3)
+order_by = driver.find_element_by_class_name("orderby")
+select = Select(order_by)
+selected_option = select.first_selected_option.get_attribute("value")
+assert "price-desc" in selected_option
+
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+my_account = driver.find_element_by_css_selector("#menu-item-50 a")
+my_account.click()
+time.sleep(3)
+username = driver.find_element_by_css_selector("#username")
+username.send_keys("ax.erkin@gmail.com")
+time.sleep(3)
+password = driver.find_element_by_css_selector("#password")
+password.send_keys("garikratatuy")
+time.sleep(3)
+login_button = driver.find_element_by_css_selector(".u-column1 .woocommerce-Button")
+login_button.click()
+time.sleep(3)
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+android = driver.find_element_by_css_selector(".products li:nth-child(1) a:nth-child(1)")
+android.click()
+time.sleep(3)
+price_1 = driver.find_element_by_css_selector(".price del .woocommerce-Price-amount")
+assert "?600.00" in price_1.text
+time.sleep(3)
+price_2 = driver.find_element_by_css_selector(".price ins .woocommerce-Price-amount")
+assert "?450.00" in price_2.text
+image = driver.find_element_by_css_selector(".images a")
+image.click()
+time.sleep(3)
+close = driver.find_element_by_css_selector(".pp_close")
+close.click()
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+time.sleep(3)
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+add_to_basket = driver.find_element_by_css_selector(".products li:nth-child(4) a:nth-child(2)")
+add_to_basket.click()
+time.sleep(3)
+cart_contents = driver.find_element_by_css_selector(".cartcontents")
+assert "1 Item" in cart_contents.text
+time.sleep(3)
+amount = driver.find_element_by_css_selector("#wpmenucartli .amount")
+assert "?180.00" in amount.text
+time.sleep(3)
+view_basket = driver.find_element_by_link_text("View Basket")
+view_basket.click()
+time.sleep(3)
+subtotal = driver.find_element_by_css_selector(".cart-subtotal")
+if  str("?181.00"):
+    print("Â Subtotal ÎÒÎÁÐÀÇÈËÀÑÜ ñòîèìîñòü")
+else:
+    print("Â Subtotal ÍÅ ÎÒÎÁÐÀÇÈËÀÑÜ ñòîèìîñòü")
+time.sleep(3)
+total = driver.find_element_by_css_selector(".order-total")
+if str("?184.60"):
+    print("Â Total ÎÒÎÁÐÀÇÈËÀÑÜ ñòîèìîñòü")
+else:
+    print("Â Total ÍÅ ÎÒÎÁÐÀÇÈËÀÑÜ ñòîèìîñòü")
+
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+time.sleep(3)
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+driver.execute_script("window.scrollBy(0, 300);")
+develpment_add_to_basket = driver.find_element_by_css_selector(".products li:nth-child(4) a:nth-child(2)")
+develpment_add_to_basket.click()
+time.sleep(3)
+algorithm_add_to_basket = driver.find_element_by_css_selector(".products li:nth-child(5) a:nth-child(2)")
+algorithm_add_to_basket.click()
+view_basket = driver.find_element_by_link_text("View Basket")
+view_basket.click()
+time.sleep(3)
+product_remove = driver.find_element_by_css_selector("tbody .cart_item:nth-child(1) .product-remove a")
+product_remove.click()
+time.sleep(3)
+undo = driver.find_element_by_css_selector(".woocommerce-message a")
+undo.click()
+time.sleep(3)
+quantity = driver.find_element_by_css_selector("tbody .cart_item:nth-child(2) .qty")
+quantity.clear()
+quantity.send_keys("3")
+ubdate_basket = driver.find_element_by_css_selector(".actions .button:nth-child(2)")
+ubdate_basket.click()
+time.sleep(3)
+quantity = driver.find_element_by_css_selector("tbody .cart_item:nth-child(2) .qty")
+assert "3" in quantity.get_attribute('value')
+time.sleep(3)
+apply_coupon = driver.find_element_by_css_selector(".coupon .button")
+apply_coupon.click()
+time.sleep(3)
+message_coupon_code = driver.find_element_by_css_selector(".woocommerce-error li")
+assert "Please enter a coupon code." in message_coupon_code.text
+
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.select import Select
+
+path_to_extension = r'C:\Users\erkin\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\5.11.0_0'
+chrome_options = Options()
+chrome_options.add_argument('load-extension=' + path_to_extension)
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe', chrome_options=chrome_options)
+driver.create_options()
+driver.maximize_window()
+time.sleep(6)
+driver.implicitly_wait(10)
+first_browser_tab = driver.window_handles[0]
+driver.switch_to.window(first_browser_tab)
+driver.get("https://practice.automationtesting.in/")
+shop = driver.find_element_by_link_text("Shop")
+shop.click()
+time.sleep(3)
+driver.execute_script("window.scrollBy(0, 300);")
+time.sleep(3)
+develpment_add_to_basket = driver.find_element_by_css_selector(".products li:nth-child(4) a:nth-child(2)")
+develpment_add_to_basket.click()
+time.sleep(3)
+view_basket = driver.find_element_by_link_text("View Basket")
+view_basket.click()
+time.sleep(3)
+proced_to_checkout = driver.find_element_by_css_selector(".wc-proceed-to-checkout a")
+proced_to_checkout.click()
+time.sleep(3)
+first_name = driver.find_element_by_id("billing_first_name")
+first_name.send_keys("Erkin")
+time.sleep(2)
+last_name = driver.find_element_by_id("billing_last_name")
+last_name.send_keys("Atabaev")
+time.sleep(2)
+billing_email = driver.find_element_by_id("billing_email")
+billing_email.send_keys("ax.erkin@gmail.com")
+time.sleep(2)
+billing_phone = driver.find_element_by_id("billing_phone")
+billing_phone.send_keys("+9989191314373")
+time.sleep(2)
+country = driver.find_element_by_id("s2id_billing_country")
+country.click()
+time.sleep(2)
+country_select = driver.find_element_by_id("s2id_autogen1_search")
+country_select.send_keys("Uzbekistan")
+time.sleep(2)
+li = driver.find_element_by_css_selector(".select2-results li")
+li.click()
+time.sleep(2)
+address = driver.find_element_by_id("billing_address_1")
+address.send_keys("My address")
+time.sleep(2)
+City = driver.find_element_by_id("billing_city")
+City.send_keys("Urganch")
+time.sleep(2)
+State = driver.find_element_by_id("billing_state")
+State.send_keys("Khorazm")
+time.sleep(2)
+Postcode = driver.find_element_by_id("billing_postcode")
+Postcode.send_keys("220110")
+driver.execute_script("window.scrollBy(0, 600);")
+time.sleep(3)
+check_payments = driver.find_element_by_id("payment_method_cheque")
+check_payments.click()
+place_order = driver.find_element_by_id("place_order")
+place_order.click()
+time.sleep(3)
+thank_you_text = driver.find_element_by_css_selector(".woocommerce-thankyou-order-received")
+assert "Thank you. Your order has been received." in thank_you_text.text
+time.sleep(3)
+payment_method = driver.find_element_by_css_selector(".method")
+assert "Check Payments" in payment_method.tex
